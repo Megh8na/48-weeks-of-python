@@ -1,0 +1,4 @@
+Line 1: Hello World
+Line 2: Python is fun
+Line 3: Learning file handling
+Line 4: This is a new appended line!

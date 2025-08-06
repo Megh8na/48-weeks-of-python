@@ -1,0 +1,35 @@
+import os
+
+# Step 1: Create a folder for Week 14 if it doesn't exist
+folder_name = "week14"
+os.makedirs(folder_name, exist_ok=True)
+
+# Step 2: Define the file path inside the folder
+file_name = os.path.join(folder_name, "my_file.txt")
+
+# Step 3: Check if file exists; if not, create it with 3 lines
+if not os.path.exists(file_name):
+    with open(file_name, "w") as file:
+        file.write("Line 1: Hello World\n")
+        file.write("Line 2: Python is fun\n")
+        file.write("Line 3: Learning file handling\n")
+    print("✅ File created with 3 initial lines in 'week14' folder.")
+
+# Step 4: Append a new line
+with open(file_name, "a") as file:
+    file.write("Line 4: This is a new appended line!\n")
+
+print("✅ New line appended to the file.")
+
+# Step 5: Read the last 3 lines
+with open(file_name, "r") as file:
+    lines = file.readlines()
+
+last_3_lines = lines[-3:]  # Get last 3 lines
+
+print("\nLast 3 lines of the file:")
+for line in last_3_lines:
+    print(line.strip())
+
+# Step 6: Show the file location
+print("\nFile saved at:", os.path.abspath(file_name))
